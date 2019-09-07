@@ -1,96 +1,149 @@
-# Shinobi
+# We moved to GitLab!
+## https://gitlab.com/Shinobi-Systems/ShinobiCE
 
-<center>
-<a href="https://www.youtube.com/user/MrMoea92">YouTube</a> - <a href="https://shinobicctv.herokuapp.com/">Slack</a> - <a href="https://twitter.com/ShinobiCCTV">Twitter</a> - <a href="https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks">Facebook</a> - <a href="https://www.reddit.com/r/ShinobiCCTV/">Reddit</a> - <a href="https://github.com/moeiscool/Shinobi/wiki/Support-Shinobi"><b>Donate</b></a>
-</center>
+# Shinobi CE
+### GPLv3 + AGPLv3
 
-Shinobi is the Open Source CCTV platform written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.
+Shinobi is the Open Source CCTV Solution written in Node.JS. Designed with multiple account system, Streams by WebSocket, and Save to WebM. Shinobi can record IP Cameras and Local Cameras.
 
-Yes. I am saying it's **the** platform. It will hopefully be revered like WordPress and Magento in their respective sectors... Hopefully better.
-
-<img src="https://github.com/moeiscool/Shinobi/blob/master/web/libs/img/demo.gif?raw=true">
+<a href="http://shinobi.video/gallery"><img src="https://github.com/ShinobiCCTV/Shinobi/blob/master/web/libs/img/demo.jpg?raw=true"></a>
 
 # Key Aspects
 
+For an updated list of features visit the official website. http://shinobi.video/features
+
+- Time-lapse Viewer (Watch a hours worth of footage in a few minutes)
+- 2-Factor Authentication
+- Defeats stream limit imposed by browsers
+  - With Base64 (Stream Type) and JPEG Mode (Option)
 - Records IP Cameras and Local Cameras
-- Streams by WebSocket
+- Streams by WebSocket, HLS (includes audio), and MJPEG
 - Save to WebM and MP4
- - Other formats will be added after codec choices are less confusing.
+  - Can save Audio
+- Push Events - When a video is finished it will appear in the dashboard without a refresh
+- Region Motion Detection (Similar to ZoneMinder Zone Detection)
+  - Represented by a Motion Guage on each monitor
+- "No Motion" Notifications
+- 1 Process for Each Camera to do both, Recording and Streaming
+- Timeline for viewing Motion Events and Videos
+- Sub-Accounts with permissions
+  - Monitor Viewing
+  - Monitor Editing
+  - Video Deleting
+  - Separate API keys for sub account
+- Cron Filters can be set based on master account
+- Stream Analyzer built-in (FFprobe GUI)
+- Monitor Groups
+- Can snapshot images from stream directly
+- Lower Bandwith Mode (JPEG Mode)
+  - Snapshot (cgi-bin) must be enabled in Monitor Settings
+- Control Cameras from Interface
 - API
- - Get videos
- - Get monitors
- - Change monitor modes : Disabled, Watch, Record
- - Embedding streams
+  - Get videos
+  - Get monitors
+  - Change monitor modes : Disabled, Watch, Record
+  - Embedding streams
+- Dashboard Framework made with Google Material Design Lite, jQuery, and Bootstrap
+
+## Asking for help
+
+Before asking questions it would nice if you read the docs :) http://shinobi.video
+
+After doing so please head on over to the Discord community chat for support. https://discordapp.com/invite/mdhmvuH
+
+The Issues section is only for bugs with the software. Comments and feature requests may be closed without comment. http://shinobi.video/docs/contribute
+
+Please be considerate of developer efforts. If you have simple questions, like "what does this button do?", please be sure to have read the docs entirely before asking. If you would like to skip reading the docs and ask away you can order a support package :) http://shinobi.video/support
+
+## Making Suggestions or Feature Requests
+
+You can post suggestions in the Discord #suggestions channel. Please do not treat this channel like a "demands" window. Developer efforts are limited. Much more than many alternatives.
+
+when you have a suggestion please try and make the changes yourself then post a pull request to the `dev` branch. Then we can decide if it's a good change for Shinobi. If you don't know how to go about it and want to have me put it higher on my priority list you can order a support package :) Pretty Ferengi of me... but until we live in a world without money please support Shinobi :) Cheers!
+
+http://shinobi.video/support
 
 ## Help make Shinobi the best Open Source CCTV Solution.
-If you like Shinobi please check out some ways you can help <a href="https://github.com/moeiscool/Shinobi/wiki/Support-Shinobi">Support Shinobi</a>.
+Donate - http://shinobi.video/docs/donate
 
-$5 from each person that visits the github page would be enough. Currently all hours spent on Shinobi are entirely voluntary. There is no income from sharing this program with you, so all support means a great deal.
+Ordering a License, Paid Support, or anything from <a href="//camera.observer">here</a> will allow a lot more time to be spent on Shinobi.
 
-**Just a side note:** Paypal is the best way to donate :)
+Order Support - http://shinobi.video/support
 
-**paypal@m03.ca**
+# Why make this?
 
-# More about Shinobi in the Wiki
+http://shinobi.video/why
 
-https://github.com/moeiscool/Shinobi/wiki
+# What others say
 
-# Supported Cameras
+> "After trying zoneminder without success (heavy unstable and slow) I passed to Shinobi that despite being young spins a thousand times better (I have a setup with 16 cameras recording in FHD to ~ 10fps on a pentium of ~ 2009 and I turn with load below 1.5)."
 
-https://github.com/moeiscool/Shinobi/wiki/Supported-Cameras
+> *A Reddit user, /r/ItalyInformatica*
 
+&nbsp;
 
-# Supported Systems
+> "I would suggest Shinobi as a NVR. It's still in the early days but works a lot better than ZoneMinder for me. I'm able to record 16 cams at 1080p 15fps continously whith no load on server (Pentium E5500 3GB RAM) where zm crashed with 6 cams at 720p. Not to mention the better interface."
 
-https://github.com/moeiscool/Shinobi/wiki/Supported-Systems
+> *A Reddit user, /r/HomeNetworking*
 
 # How to Install and Run
 
-<a href="https://github.com/moeiscool/Shinobi/wiki/Install">Installation Tutorials</a>
+> FOR DOCKER USERS : Docker is not officially supported and is not recommended. The kitematic method is provided for those who wish to quickly test Shinobi. The Docker files included in the master and dev branches are maintained by the community. If you would like support with Docker please find a community member who maintains the Docker files or please refer to Docker's forum.
 
-<a href="https://github.com/moeiscool/Shinobi/wiki/Troubleshooting">Troubleshooting Guide</a>
+#### Fast Install (The Ninja Way)
+
+1. Become `root` to use the installer and run Shinobi. Use one of the following to do so.
+
+    - Ubuntu 17.04, 17.10
+        - `sudo su`
+    - CentOS 7
+        - `su`
+    - MacOS 10.7(+)
+        - `su`
+2. Download and run the installer.
+
+```
+bash <(curl -s https://gitlab.com/Shinobi-Systems/Shinobi-Installer/raw/master/shinobi-install.sh)
+```
+
+#### Elaborate Installs
+
+Installation Tutorials - http://shinobi.video/docs/start
+
+Troubleshooting Guide - http://shinobi.video/docs/start#trouble-section
 
 # Author
 
 Moe Alam
 
-Follow me on Twitter https://twitter.com/moe_alam
+Follow Shinobi on Twitter https://twitter.com/ShinobiCCTV
 
-<a title="Find me on Slack, Get an Invite" href="https://shinobicctv.herokuapp.com/"><img src="https://camo.githubusercontent.com/5843e066b5f0a7b5ff5942921aedcbac70766ed5/68747470733a2f2f612e736c61636b2d656467652e636f6d2f35656230302f696d672f6c616e64696e672f77686572655f776f726b5f68617070656e732f6c6f676f2d6461726b2d626c75652e706e67"></a>
+Join the Community Chat
 
-# Credits
+<a title="Find me on Discord, Get an Invite" href="https://discordapp.com/invite/mdhmvuH"><img src="https://cdn-images-1.medium.com/max/115/1*OoXboCzk0gYvTNwNnV4S9A@2x.png"></a>
 
-If you wish to use this software for commercial purposes please consider donating :) If not.. including my name would be nice.
+# Support the Development
 
-    Shinobi
-    Copyright (C) 2016-2025 Moe Alam, moeiscool
+Ordering a certificate or support package greatly boosts development. Please consider contributing :)
 
-    This program is free software; you can redistribute it and/or
-    modify it under the terms of the GNU General Public License
-    as published by the Free Software Foundation; either version 2
-    of the License, or (at your option) any later version.
+http://shinobi.video/support
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    
-    # Libraries Used
-    
-    vbox.css (the framework that does the vertical panel layout) - I honestly don't know who made this, i found it in a zip.
-    jQuery - http://jquery.com/
-    Socket.io - http://socket.io/
-    Bootstrap - http://getbootstrap.com/
-    Moment.js - http://momentjs.com/
-    Livestamp.js - https://mattbradley.github.io/livestampjs/
-    Font Awesome - http://fontawesome.io/
-    Node.js - https://nodejs.org
-    MySQL - https://www.mysql.com/
-    NPM: mysql - https://www.npmjs.com/package/mysql
-    NPM: crypto - https://www.npmjs.com/package/crypto
-    NPM: express - http://expressjs.com/
-    NPM: request - https://www.npmjs.com/package/request
-    NPM: connection-tester - https://www.npmjs.com/package/connection-tester
-    
-    and maybe a few others.
-    
+# Links
+
+Documentation - http://shinobi.video/docs
+
+Donate - https://shinobi.video/docs/donate
+
+Tested Cameras and Systems - http://shinobi.video/docs/supported
+
+Features - http://shinobi.video/features
+
+Reddit (Forum) - https://www.reddit.com/r/ShinobiCCTV/
+
+YouTube (Tutorials) - https://www.youtube.com/channel/UCbgbBLTK-koTyjOmOxA9msQ
+
+Discord (Community Chat) - https://discordapp.com/invite/mdhmvuH
+
+Twitter (News) - https://twitter.com/ShinobiCCTV
+
+Facebook (News) - https://www.facebook.com/Shinobi-1223193167773738/?ref=bookmarks

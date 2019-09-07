@@ -1,19 +1,20 @@
 -- --------------------------------------------------------
--- Host:                         192.168.88.58
--- Server version:               5.7.17-0ubuntu0.16.04.1 - (Ubuntu)
--- Server OS:                    Linux
--- HeidiSQL Version:             9.3.0.4984
+-- Host:                         192.168.88.37
+-- Server version:               10.1.25-MariaDB- - Ubuntu 17.04
+-- Server OS:                    debian-linux-gnu
+-- HeidiSQL Version:             9.4.0.5125
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping database structure for ccio
-CREATE DATABASE IF NOT EXISTS `ccio` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `ccio`;
 
+-- Dumping database structure for ccio
+CREATE DATABASE IF NOT EXISTS `ccio` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `ccio`;
 
 -- Dumping structure for table ccio.API
 CREATE TABLE IF NOT EXISTS `API` (
@@ -26,8 +27,6 @@ CREATE TABLE IF NOT EXISTS `API` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
-
-
 -- Dumping structure for table ccio.Events
 CREATE TABLE IF NOT EXISTS `Events` (
   `ke` varchar(50) DEFAULT NULL,
@@ -37,8 +36,6 @@ CREATE TABLE IF NOT EXISTS `Events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- Data exporting was unselected.
-
-
 -- Dumping structure for table ccio.Logs
 CREATE TABLE IF NOT EXISTS `Logs` (
   `ke` varchar(50) DEFAULT NULL,
@@ -48,8 +45,6 @@ CREATE TABLE IF NOT EXISTS `Logs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
-
-
 -- Dumping structure for table ccio.Monitors
 CREATE TABLE IF NOT EXISTS `Monitors` (
   `mid` varchar(50) DEFAULT NULL,
@@ -65,14 +60,12 @@ CREATE TABLE IF NOT EXISTS `Monitors` (
   `path` varchar(100) DEFAULT '/',
   `port` int(8) DEFAULT '80',
   `fps` int(8) DEFAULT '1',
-  `mode` enum('stop','start','record','mrecord') DEFAULT 'stop',
+  `mode` varchar(15) DEFAULT NULL,
   `width` int(11) DEFAULT '640',
   `height` int(11) DEFAULT '360'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
-
-
 -- Dumping structure for table ccio.Presets
 CREATE TABLE IF NOT EXISTS `Presets` (
   `ke` varchar(50) DEFAULT NULL,
@@ -82,8 +75,6 @@ CREATE TABLE IF NOT EXISTS `Presets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
-
-
 -- Dumping structure for table ccio.Users
 CREATE TABLE IF NOT EXISTS `Users` (
   `ke` varchar(50) DEFAULT NULL,
@@ -96,8 +87,6 @@ CREATE TABLE IF NOT EXISTS `Users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
-
-
 -- Dumping structure for table ccio.Videos
 CREATE TABLE IF NOT EXISTS `Videos` (
   `mid` varchar(50) DEFAULT NULL,
@@ -107,8 +96,9 @@ CREATE TABLE IF NOT EXISTS `Videos` (
   `duration` float DEFAULT NULL,
   `size` float DEFAULT NULL,
   `frames` int(11) DEFAULT NULL,
-  `end` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` int(1) DEFAULT '0' COMMENT '0:Open,1:Complete,2:Error,3:Unknown'
+  `end` timestamp NULL DEFAULT NULL,
+  `status` int(1) DEFAULT '0' COMMENT '0:Building,1:Complete,2:Read,3:Archive',
+  `details` text
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
